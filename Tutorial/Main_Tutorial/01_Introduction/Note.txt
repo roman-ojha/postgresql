@@ -1,0 +1,24 @@
+*) What is Database:
+    -> Store
+    -> Manipulate
+    -> Retrieve
+
+*) PostgreSQL
+    -> https://www.postgresql.org/
+    -> PostgreSQL use SQL for it's query language
+    -> Postgres is The Database Engine
+    -> SQL is Structured Query Language
+    -> Object-relational database management system
+
+*) SQL:
+    -> SQL is a programming language
+    -> EX:
+        -> SELECT <first_name> FROM <person>
+    -> Manage data held in a relational database
+    -> Very powerful
+    -> since 1974
+
+*) How Data is stored
+    -> Stores data in tables
+    -> Columns
+    -> Rows
