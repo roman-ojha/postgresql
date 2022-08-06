@@ -1,0 +1,10 @@
+*) simple command:
+    -> start with \
+    -> \? (for help)
+        -> q (for exist)
+    -> \l 
+        -> (list all of the database in computer)
+
+*) Create Database:
+    -> CREATE DATABASE <database_name>;
+        -> (to create database)
