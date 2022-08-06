@@ -1,15 +1,16 @@
 *) Create Table with Constraints:
     -> CREATE TABLE <table_name> (
-        <Column_name> <Data_Type><constraints_if_any>
+        <Column_name> <Data_Type> <constraints_if_any>
     )
     -> EX:
         -> CREATE TABLE person (
-            id int,
+            id INT,
             first_name VARCHAR(50),
             last_name VARCHAR(50),
             gender VARCHAR(6),
-            date_of_birth TIMESTAMP,
-        )
-
-*) Create Table without Constraints:
-    -> 
+            date_of_birth TIMESTAMP );
+    
+    -> \d
+        -> (to see all the table inside database)
+    -> \d <table_name>
+        -> (to see info of specific table)
