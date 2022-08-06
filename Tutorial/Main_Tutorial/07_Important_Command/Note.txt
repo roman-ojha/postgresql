@@ -1,0 +1,4 @@
+*) 
+    -> DROP DATABASE <database_name>;
+        -> (but using this command you can delete database)
+        -> NOTE: this is important to note that if you will executed this command then you will going to lose all the data from that database in a matter of millisecond so, be careful while using this command 
