@@ -1,0 +1,5 @@
+*) For windows:
+    -> open SQL Shell app
+    -> it will ask for server:
+        -> if you have remove server you can add url here but now we are testing things locally we will going to connect to our local server
+        -> press enter as default and enter the password
