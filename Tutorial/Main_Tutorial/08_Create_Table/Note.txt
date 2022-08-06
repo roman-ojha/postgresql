@@ -1,16 +1,37 @@
-*) Create Table with Constraints:
+*) Create TAble:
     -> CREATE TABLE <table_name> (
         <Column_name> <Data_Type> <constraints_if_any>
     )
+*) Create Table without Constraints:
     -> EX:
         -> CREATE TABLE person (
             id INT,
             first_name VARCHAR(50),
             last_name VARCHAR(50),
             gender VARCHAR(6),
-            date_of_birth TIMESTAMP );
+            date_of_birth DATE );
     
     -> \d
         -> (to see all the table inside database)
     -> \d <table_name>
         -> (to see info of specific table)
+
+
+*) Create Table With Constraints:
+    -> so when user try to add some data inside table if we had added some constraint then it have to satisfy these constraints
+    -> EX:
+        -> CREATE TABLE person (
+            id BIGSERIAL NOT NULL PRIMARY KEY,
+            first_name VARCHAR(50) NOT NULL,
+            last_name VARCHAR(50) NOT NULL,
+            gender VARCHAR(6) NOT NULL,
+            date_of_birth DATE NOT NULL );
+
+        -> BIGSERIAL: increment by itself
+        -> NOT NULL: id can't be null
+        -> PRIMARY KEY: id is the primary key for this table
+        -> so id will uniquely identify person from this table
+    -> now if we will add BIGSERIAL while create table it will also create another sequence table which will contain the information about the that increment by itself thing
+
+*) DROP Table:
+    -> DROP TABLE person;
