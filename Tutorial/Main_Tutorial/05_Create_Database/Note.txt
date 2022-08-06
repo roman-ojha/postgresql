@@ -6,5 +6,7 @@
         -> (list all of the database in computer)
 
 *) Create Database:
+    -> psql -U postgres -h localhost -W 
+        -> (to connect to localhost postgres)
     -> CREATE DATABASE <database_name>;
         -> (to create database)

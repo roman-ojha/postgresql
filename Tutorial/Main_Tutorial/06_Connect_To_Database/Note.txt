@@ -1,0 +1,21 @@
+*) 
+    -> psql --help
+        -> (to get some information about command)
+    
+-> using help we will see this:
+
+-> Connection options:
+  -h, --host=HOSTNAME      database server host or socket directory (default: "local socket")
+  -p, --port=PORT          database server port (default: "5432")
+  -U, --username=USERNAME  database user name (default: "razzr")
+  -w, --no-password        never prompt for password
+  -W, --password           force password prompt (should happen automatically)
+
+  *) Connecting To Database:
+    -> psql -h localhost -p 5432 -U postgres <database_name>
+        -> postgres is a user
+    
+    => another method to connect:
+        -> psql -U postgres -h localhost -W
+            -> (login as user)
+        -> \c <database_name>
