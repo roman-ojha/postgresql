@@ -1,0 +1,13 @@
+*) Different way to connect to database:
+    -> Connect using client
+    -> GUI client
+    -> Terminal/CMD
+    -> Application
+
+*) Different GUI Client out there:
+    -> https://www.jetbrains.com/datagrip/
+        -> you can use it for production app you have to pay
+    -> https://eggerapps.at/postico/ 
+        -> for mac user
+    -> pgAdmin:
+        -> for window user you can use this
