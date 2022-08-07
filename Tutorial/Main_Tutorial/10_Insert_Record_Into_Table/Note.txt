@@ -1,0 +1,24 @@
+*) Insert:
+    -> Syntax:
+        -> INSERT INTO <table_name>(
+            col_name
+        )
+        VALUES (<values>);
+        
+    -> EX:
+        -> INSERT INTO person(
+            first_name,
+            last_name,
+            gender,
+            date_of_birth)
+            VALUES ('Razz', 'Roman', 'Male', DATE '1988-01-09');
+
+        -> INSERT INTO person(
+            first_name,
+            last_name,
+            gender,
+            date_of_birth,
+            email)
+            VALUES ('Roman', 'Razz', 'Male', DATE '1988-01-09', 'razz@gmail.com');
+
+        -> Notice that we have not added id here because BIGSERIAL data type will automatically increment id for us
