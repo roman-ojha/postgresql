@@ -1,0 +1,17 @@
+=> here we will going to add 1000 people inside table
+=> for that we will going to use mockaroo:
+    -> https://www.mockaroo.com/
+
+*) Input/Output Command
+  \copy ...              perform SQL COPY with data stream to the client host
+  \echo [-n] [STRING]    write string to standard output (-n for no newline)
+  \i FILE                execute commands from file
+  \ir FILE               as \i, but relative to location of current script
+  \o [FILE]              send all query results to file or |pipe
+  \qecho [-n] [STRING]   write string to \o output stream (-n for no newline)
+
+=> after we generated '.sql' file we will going to do:
+    -> for right now we will first drop the table because we have added new column on file
+    -> \i D:/<path>/person.sql
+    -> SELECT * from person
+        -> (see inserted data)
