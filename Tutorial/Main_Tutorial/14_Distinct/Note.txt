@@ -1,0 +1,10 @@
+*) Distinct:
+    -> when we want unique result which doesn't get extract before then we will use Distinct
+    -> like if we want to get all 'country_of_birth' but unique
+        -> means we want to get same 'country_of_birth' once 
+    -> syntax:
+        -> SELECT DISTINCT <field> FROM <table> ORDER BY <field>;
+
+    -> EX:
+        -> SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth;
+        -> SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth DESC;

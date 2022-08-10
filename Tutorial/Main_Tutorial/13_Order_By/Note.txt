@@ -13,3 +13,4 @@
         -> SELECT * FROM person ORDER BY first_name;
         -> SELECT * FROM person ORDER BY id, email;
         -> SELECT * FROM person ORDER BY date_of_birth;
+        -> SELECT country_of_birth FROM person ORDER BY country_of_birth;
