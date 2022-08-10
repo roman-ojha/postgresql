@@ -1,0 +1,14 @@
+=> To grab record stored inside database we have to use 'SELECT'
+
+*) SELECT:
+    -> SELECT * FROM <table>;
+        -> '*': means all
+        -> (select all from given table)
+    -> SELECT <field_name> FROM <table>;
+        -> (select only specific field from given table)
+    
+    EX:
+        -> SELECT * from person;
+        -> SELECT first_name FROM person;
+        -> SELECT first_name, last_name FROM person;
+        -> SELECT email FROM person;
