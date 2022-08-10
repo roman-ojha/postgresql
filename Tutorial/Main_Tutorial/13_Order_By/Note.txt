@@ -1,0 +1,15 @@
+*) Order By:
+    -> Order By will help to sort out the data
+    -> 1, 2, 3, 4, 5, 6 ASC
+    -> 6, 5, 4, 3 ,2, 1 DESC
+    -> Ascending & Descending work for Dates, Number & Strings
+    -> SELECT * FROM <table> ORDER BY <field_to_order_by> <ASC|DESC>;
+    -> EX:
+        -> SELECT * FROM person ORDER BY country_of_birth;
+            -> (default is ASC)
+        -> SELECT * FROM person ORDER BY country_of_birth ASC;
+        -> SELECT * FROM person ORDER BY country_of_birth DESC;
+        -> SELECT * FROM person ORDER BY id DESC;
+        -> SELECT * FROM person ORDER BY first_name;
+        -> SELECT * FROM person ORDER BY id, email;
+        -> SELECT * FROM person ORDER BY date_of_birth;
