@@ -1,0 +1,11 @@
+*) Where Clause:
+    -> allow us to filter the data based on conditions
+    -> Single Condition:
+        -> SELECT * FROM <table_name> WHERE <field> = '<field_value>';
+    -> Multiple Condition:
+        -> SELECT * FROM <table_name> WHERE <field_1> = '<field_1_value>' AND <field_2> = '<field_2_value>';
+    -> EX:
+        -> SELECT * FROM person WHERE gender = 'Female';
+        -> SELECT * FROM person WHERE gender = 'Male' AND country_of_birth = 'Nepal';
+        -> SELECT * FROM person WHERE gender = 'Male' AND (country_of_birth = 'Nepal' OR country_of_birth = 'Poland');
+        -> SELECT * FROM person WHERE gender = 'Male' AND (country_of_birth = 'China' OR country_of_birth = 'Poland') AND last_name = 'Withey';
