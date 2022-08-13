@@ -1,0 +1,16 @@
+*) Operators:
+    -> Comparison Operator
+    -> Arithmetic Operator
+    -> Bitwise Operator
+    -> Logical Operator
+
+*) Comparison Operators:
+    -> Runs comparison on given condition and return either true or false
+    -> so we can use comparison operator to filter down the data in where clause
+    -> EX:
+        -> SELECT 1 = 1;
+        -> SELECT 1 > 2;
+        -> SELECT 1 >= 2;
+        -> SELECT 1 <> 2;
+            -> (not equal)
+        -> SELECT 'Razz' <> 'Roman';
