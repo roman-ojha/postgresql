@@ -1,0 +1,19 @@
+*) In:
+    -> let's say we want to select field from specific value
+    -> like in previous example inside 'country_of_birth' china, France & Brazil then:
+        ->  SELECT * FROM person WHERE country_of_birth = 'China' 
+            OR country_of_birth = 'France' 
+            OR country_of_birth = 'Brazil';
+    -> that was actually a lot of code just to include 'China', 'France' & 'Brazil' 
+    -> to solve this problem we can use In keyword
+    -> In keyword takes an array of values and then return a query matching those value
+    -> EX:
+        ->  SELECT *  
+            FROM person 
+            WHERE country_of_birth 
+            IN ('China', 'Brazil', 'France');
+        ->  SELECT * 
+            FROM person 
+            WHERE country_of_birth 
+            IN ('China', 'Brazil', 'France') 
+            ORDER BY country_of_birth;
