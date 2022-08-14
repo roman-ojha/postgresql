@@ -1,0 +1,6 @@
+*) Between:
+    -> this will help to select data from a range
+    -> let's say that we want to find out everyone that was born between 2000-2015
+        ->  SELECT * FROM person
+            WHERE date_of_birth
+            BETWEEN DATE '2000-01-01' AND '2015-01-01';
