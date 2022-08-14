@@ -1,0 +1,18 @@
+*) Limit, Offset, Fetch:
+    *) Limit:
+        -> let's say we just want to select first 10 row of the table in that case we can use LIMIT keyword
+    *) Offset
+        -> now also we can Offset that limit, let's say that you want to select the very first 5 people after certain row
+    *) Fetch:
+        -> there is another way that perform the same thing as Limit
+        -> so Limit is not a keyword by SQL Standards
+        -> but also it want widely used by different databases
+        -> but the officially way of actually limiting the result coming from the query is by using the Fetch keyword
+    -> EX:
+        -> SELECT * FROM person LIMIT 10;
+        -> SELECT * FROM person OFFSET 5 LIMIT 15;
+            -> (here first 5 row will not get selected)
+        -> SELECT * FROM person OFFSET 5;
+        -> SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROW ONLY;
+        -> SELECT * FROM person OFFSET 5 FETCH FIRST ROW ONLY;
+            -> (first 1 row only)
