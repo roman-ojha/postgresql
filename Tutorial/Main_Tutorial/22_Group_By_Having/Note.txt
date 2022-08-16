@@ -1,0 +1,32 @@
+*) Group By Having:
+    -> Having keyword work with group by
+    -> It allow to perform extra filtering after you perform aggregation 
+    -> let's that we group by country_of_birth but also we want to count at least 5 people
+    -> see document for aggregate function: https://www.postgresql.org/docs/9.5/functions-aggregate.html
+    -> EX:
+        -> SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) > 5 ORDER BY country_of_birth;
+            -> (having greater then 5 people)
+            -> Output:
+                country_of_birth | count
+                ------------------+-------
+                Argentina        |    20
+                Brazil           |    32
+                Canada           |    18
+                China            |   174
+                Colombia         |     9
+                Croatia          |     7
+                Czech Republic   |    13
+                France           |    28
+                Greece           |    13
+        -> SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) > 30 ORDER BY COUNT(*);
+            -> (count and then order by people count)
+            -> Output:
+                country_of_birth | count
+                ------------------+-------
+                Brazil           |    32
+                Portugal         |    34
+                Philippines      |    36
+                Poland           |    37
+                Russia           |    37
+                Indonesia        |   109
+                China            |   174
