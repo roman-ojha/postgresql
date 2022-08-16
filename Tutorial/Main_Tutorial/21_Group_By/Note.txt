@@ -1,0 +1,21 @@
+*) Group By:
+    -> it will allow us to group our data based on a column
+    -> let's say that we want to find out how many people that we have for each of the country
+    -> EX:
+        -> SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth;
+            -> (this will count every single one of the from country_of_birth and)
+            -> Output:
+                Bangladesh                       |     4
+                Indonesia                        |   109
+                Venezuela                        |     3
+                Luxembourg                       |     2
+        -> SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth ORDER BY country_of_birth;
+            -> Output:
+                Afghanistan                      |     5
+                Albania                          |     5
+                Antigua and Barbuda              |     1
+                Argentina                        |    20
+                Armenia                          |     5
+                Azerbaijan                       |     3
+                Bangladesh                       |     4
+                Belarus                          |     5
