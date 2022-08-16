@@ -1,0 +1,17 @@
+*) Like:
+    -> Like operator is use to match text value against the pattern using while cards
+    -> let's say that we want to get the rows that contain the email ends in .com
+    -> Ex:
+        -> SELECT * FROM person WHERE email LIKE '%.com';
+            -> (wildcard follow by .com)
+        -> SELECT * FROM person WHERE email LIKE '%google.com';
+        -> SELECT * FROM person WHERE email LIKE '%google.com';
+        -> SELECT * FROM person WHERE email LIKE '%@google.%';
+        -> SELECT * FROM person WHERE email LIKE '________@%';
+            -> (single underscore has to match single character, the amount of underscore has to match that much amount of character on the start)
+        -> SELECT * FROM person WHERE email LIKE '____h___@%';
+
+*) iLike:
+    -> ILike will ignore case sensitive
+    -> EX:
+        -> SELECT * FROM person WHERE country_of_birth ILIKE 'p%';
