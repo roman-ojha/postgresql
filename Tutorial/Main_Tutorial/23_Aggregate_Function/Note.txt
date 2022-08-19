@@ -1,0 +1,5 @@
+*) Aggregate Functions:
+    -> https://www.postgresql.org/docs/9.5/functions-aggregate.html
+    => we have already use 'count' function here we will learn about 'max', 'min', 'sum'
+    *) Max:
+        -> 
