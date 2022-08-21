@@ -2,4 +2,47 @@
     -> https://www.postgresql.org/docs/9.5/functions-aggregate.html
     => we have already use 'count' function here we will learn about 'max', 'min', 'sum'
     *) Max:
-        -> 
+        -> to get the maximum value of the given column
+        -> EX:
+            -> SELECT MAX(price) FROM car;
+                -> Output:
+                    max
+                    ----------
+                    99997.86
+    *) MIN:
+        -> SELECT MIN(price) FROM car;
+            -> Output:
+                min
+                ----------
+                10008.19
+        -> SELECT make, model, MIN(price) FROM car GROUP BY make, model;
+            -> Output:
+                make      |          model          |   min
+                ---------------+-------------------------+----------
+                Dodge         | Journey                 | 69840.05
+                BMW           | 525                     | 40734.92
+                Pontiac       | GTO                     | 97229.98
+                Dodge         | Dynasty                 | 98300.26
+                Toyota        | Land Cruiser            | 20406.34
+    
+    *) AVG:
+        -> Average
+        -> SELECT AVG(price) FROM car;
+            -> Output:
+                avg
+                --------------------
+                55540.220020000000
+    *) Round:
+        -> Gives the round figure value
+        -> EX:
+            -> SELECT ROUND(AVG(price)) FROM car;
+            -> Output:
+                round
+                -------
+                55540
+
+    -> SELECT MIN(price),MAX(price),ROUND(AVG(price)) FROM car;
+        -> Output:
+            min    |   max    | round
+            ----------+----------+-------
+            10008.19 | 99997.86 | 55540
