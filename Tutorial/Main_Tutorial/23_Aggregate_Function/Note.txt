@@ -46,3 +46,21 @@
             min    |   max    | round
             ----------+----------+-------
             10008.19 | 99997.86 | 55540
+
+       *) SUM:
+            -> Sum allow us to perform addition of data set 
+            -> EX:
+                -> SELECT SUM(price) FROM car;
+                    -> Output:
+                            sum
+`                       -------------
+                        55540220.02`
+                -> SELECT make, SUM(price) FROM car GROUP BY make;
+                    -> Output:
+                            make      |    sum
+                        ---------------+------------
+                        Lincoln       |  929126.84
+                        Honda         | 1050036.83
+                        Ram           |  245416.29
+                        Ford          | 4746054.40
+                        Scion         |  196522.38 
