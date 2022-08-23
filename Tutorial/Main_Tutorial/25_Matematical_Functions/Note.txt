@@ -1,0 +1,27 @@
+-> https://www.postgresql.org/docs/14/functions-math.html
+
+*) Round:
+    -> let us say that in example of car we want to discount 10% of the actual price of cars
+    -> SELECT id, make, model, price, price * .10 FROM car;
+        -> Output:
+                id  |     make      |          model          |  price   | ?column?
+            ------+---------------+-------------------------+----------+-----------
+                1 | Cadillac      | Escalade ESV            | 76446.18 | 7644.6180
+                2 | Nissan        | Frontier                | 21524.06 | 2152.4060
+                3 | Pontiac       | Fiero                   | 98825.99 | 9882.5990
+    -> Using Round:
+        -> SELECT id, make, model, price, ROUND(price * .10, 2) FROM car;
+            -> (round the number into given decimal places)
+        -> Output:
+                id  |     make      |          model          |  price   |  round
+            ------+---------------+-------------------------+----------+---------
+                1 | Cadillac      | Escalade ESV            | 76446.18 | 7644.62
+                2 | Nissan        | Frontier                | 21524.06 | 2152.41
+                3 | Pontiac       | Fiero                   | 98825.99 | 9882.60
+        -> SELECT id, make, model, price, ROUND(price * .10,2), ROUND(price - (price * .10),2) FROM car;
+        -> Output:
+                id  |     make      |          model          |  price   |  round  |  round
+            ------+---------------+-------------------------+----------+---------+----------
+                1 | Cadillac      | Escalade ESV            | 76446.18 | 7644.62 | 68801.56
+                2 | Nissan        | Frontier                | 21524.06 | 2152.41 | 19371.65
+                3 | Pontiac       | Fiero                   | 98825.99 | 9882.60 | 88943.39
