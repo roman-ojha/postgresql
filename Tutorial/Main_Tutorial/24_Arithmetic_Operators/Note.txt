@@ -1,0 +1,13 @@
+*) Arithmetic Operators:
+    -> these allow us to perform maps behinds number
+    -> and we can use our data set to produce some kind of statistics or any kind of result we like
+    -> EX:
+        -> SELECT 10 + 2;
+            -> Output:
+                 ?column?
+                ----------
+                    12
+        -> SELECT 10 + 2 * 8;
+        -> SELECT 10^2;
+            -> (power)
+        -> SELECT 10 % 3;
