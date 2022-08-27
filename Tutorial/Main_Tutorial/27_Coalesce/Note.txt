@@ -1,0 +1,22 @@
+*) Coalesce:
+    -> we can handle nulls with postgres
+    -> Coalesce keyword allow us to have a default value in case the first one is not present
+    -> EX:
+        -> SELECT COALESCE(1);
+            -> Output:
+             coalesce
+            ----------
+                    1
+        -> SELECT COALESCE(null , 1) AS number;
+            -> (if the first parameter is null then it will give the second value by default)
+            -> Output:
+             number
+            --------
+                1
+        -> SELECT COALESCE(null, null, 1) AS number;
+            -> (if the first value is null then use second one if the second parameter value is null then use third one and so on and so forth)
+        -> SELECT COALESCE(null, null, 1, 10) AS number;
+            -> Output:
+             number
+            --------
+                1
