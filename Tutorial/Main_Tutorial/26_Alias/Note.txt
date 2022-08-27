@@ -1,0 +1,13 @@
+*) Alias:
+    -> if we don't specify the column name for functions then postgres will by default use function name as column name ex: 'round' '?column?'
+    -> so we can use any alias to override any column name
+    -> for that you just need to use 'AS <column_name>'
+    -> EX:
+        -> SELECT id, make, model, price AS original_price, ROUND(price * .10,2) AS ten_percent, ROUND(price - (price * .10),2) AS discount_after_10_percent FROM car;
+            -> Output:
+              id  |     make      |          model          | original_price | ten_percent | discount_after_10_percent
+            ------+---------------+-------------------------+----------------+-------------+---------------------------
+                1 | Cadillac      | Escalade ESV            |       76446.18 |     7644.62 |                  68801.56
+                2 | Nissan        | Frontier                |       21524.06 |     2152.41 |                  19371.65
+                3 | Pontiac       | Fiero                   |       98825.99 |     9882.60 |                  88943.39
+                4 | Pontiac       | Parisienne              |       87079.22 |     8707.92 |                  78371.30
