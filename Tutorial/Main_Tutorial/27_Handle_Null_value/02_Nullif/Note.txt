@@ -1,0 +1,38 @@
+*)NULLIF:
+    -> here we will see how we can tackle division by zero
+    -> SELECT 10 / 0;
+       -> ERROR:  division by zero
+    -> we can tackle this by using 'NULLIF' keyword
+    -> NULLIF take two argument and then return the first argument if the second argument is not equal to the first argument
+    -> if 'second' != 'first':
+        return 'first'
+    -> if 'first' == 'second':
+        return null
+    -> EX:
+        -> SELECT NULLIF(10,10);
+            -> Output:
+             nullif
+            --------
+
+        -> SELECT NULLIF(10,20);
+            -> Output:
+             nullif
+            --------
+                10
+        -> SELECT 10 / null;
+            -> (this will not throw an error so:)
+        -> SELECT 10 / NULLIF(2,9);
+            -> Output:
+             ?column?
+            ----------
+                    5
+        -> SELECT 10 / NULLIF(0,0);
+            -> Output:
+             ?column?
+            ----------
+            
+        -> SELECT COALESCE(10 / NULLIF(0,0), 0);
+            -> Output:
+             coalesce
+            ----------
+                    0
