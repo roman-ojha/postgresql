@@ -20,3 +20,12 @@
              number
             --------
                 1
+    -> Let us use it for our dataset:
+        -> in our 'person' database we have the email column where there is a value null in a lot of field
+        -> in that case we want to select every single email and for those people that don't have email we want it to have an email with the value of email not provided
+        -> SELECT COALESCE(email, 'Email not provided') FROM person;
+            -> Output:
+            cbellward0@newsvine.com
+            Email not provided
+            Email not provided
+            lbeamiss3@yelp.com
