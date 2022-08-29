@@ -1,0 +1,14 @@
+-> pip install psycopg2
+-> go to setting and update Database:
+        DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('DATABASENAME'),
+            'USER': config('DATABASEUSER'),
+            'PASSWORD': config('DATABASEPASSWORD'),
+            'HOST': config('DATABASEHOST'),
+            'PORT': config('DATABASEPORT'),
+        }
+    }
+-> python manage.py migrate
+-> python manage.py makemigrations
