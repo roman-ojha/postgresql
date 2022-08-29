@@ -1,0 +1,14 @@
+*) AGE():
+    -> age function is use to get the age
+    -> AGE(<current_timestamp>,<old_timestamp>);
+    -> EX:
+        -> SELECT first_name, last_name, gender, country_of_birth, date_of_birth, AGE(NOW(), date_of_birth) AS age FROM person;
+            -> Output:
+              first_name  |    last_name    |   gender   |         country_of_birth         | date_of_birth |               age
+
+            --------------+-----------------+------------+----------------------------------+---------------+---------------------------------
+            Coraline     | Bellward        | Female     | Sweden                           | 2022-01-08    | 7 mons 21 days 16:53:49.869038
+            Hayley       | Volker          | Female     | Maldives                         | 2022-07-05    | 1 mon 24 days 16:53:49.869038
+            Mona         | Targett         | Female     | Philippines                      | 2021-09-14    | 11 mons 15 days 16:53:49.869038
+            Letti        | Beamiss         | Female     | New Zealand                      | 2022-07-26    | 1 mon 3 days 16:53:49.869038
+            Kenon        | Beneyto         | Male       | Uruguay                          | 2022-03-03    | 5 mons 26 days 16:53:49.869038
