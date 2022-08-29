@@ -1,0 +1,18 @@
+*) Unique Constraint:
+    -> it allow us to have unique value for a given column
+    -> this is not same as primary key, primary key means to have unique row on the table
+
+*) Add UNIQUE Constraint
+    -> Using Given Constraint name:
+        -> ALTER TABLE <table_name> ADD CONSTRAINT <constraint_name> UNIQUE (<list_of_column>);
+    -> Using Default constraint name define by postgres
+        -> ALTER TABLE person ADD UNIQUE (email);
+    -> EX:
+        -> ALTER TABLE person ADD CONSTRAINT unique_email_address UNIQUE (email);
+            -> (added unique constraint for email in person table)
+            
+
+*) Drop UNIQUE Constraint
+    -> ALTER TABLE <table_name> DROP CONSTRAINT <constraint_name>;
+    -> EX:
+        -> ALTER TABLE person DROP CONSTRAINT unique_email_address;
