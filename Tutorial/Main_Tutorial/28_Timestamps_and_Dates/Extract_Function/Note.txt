@@ -1,0 +1,9 @@
+*) EXTRACT()
+    -> now here we will going to see to extract specific value from a date using 'EXTRACT' function
+    -> SELECT EXTRACT(YEAR FROM NOW());
+        -> (this will extract the year from NOW function)
+    -> SELECT EXTRACT(MONTH FROM NOW());
+    -> SELECT EXTRACT(DAY FROM NOW());
+    -> SELECT EXTRACT(DOW FROM NOW());
+        -> (day of the week)
+    -> SELECT EXTRACT(CENTURY FROM NOW());
