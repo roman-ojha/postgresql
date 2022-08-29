@@ -1,0 +1,15 @@
+*) Date
+    -> https://www.postgresql.org/docs/current/datatype-datetime.html
+    -> NOW()
+        -> (function given the current timestamp)
+    -> SELECT NOW()::DATE;
+        -> (typecast it to date)
+    -> SELECT NOW()::TIME;
+        -> (typecast it to time)
+
+*) Adding and Subtracting with Dates
+    -> SELECT NOW() - INTERVAL '1 YEAR';
+        -> (subtracting current date with 1 year, means getting timestamp 1 year from now)
+    -> SELECT NOW() - INTERVAL '2 MONTHS';
+    -> SELECT NOW() - INTERVAL '2 DAY';
+    -> SELECT NOW() - INTERVAL '2 DAYS';
