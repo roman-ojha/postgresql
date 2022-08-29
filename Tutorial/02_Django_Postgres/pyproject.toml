@@ -7,6 +7,7 @@ authors = ["Roman-Ojha <razzroman98@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.10"
 python-decouple = "^3.6"
+Django = "^4.1"
 
 [tool.poetry.dev-dependencies]
 
