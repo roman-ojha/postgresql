@@ -1,0 +1,10 @@
+*) Primary Keys:
+    -> A primary key is a column or a group of columns used to identify a row uniquely in a table.
+    -> EX:
+          passport_number  |    first_name    |   last_name   |         gender         | date_of_birth |
+
+        -------------------+------------------+---------------+------------------------+---------------+
+         X89432            | Roman        | Ojha              | Male                   | 2022-01-08    |
+         Z43243            | Roman        | Ojha              | Male                   | 2022-01-08    |
+         
+         -> (here passport_number is a primary key)
