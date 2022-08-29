@@ -8,3 +8,27 @@
          Z43243            | Roman        | Ojha              | Male                   | 2022-01-08    |
          
          -> (here passport_number is a primary key)
+
+        -> \d person;
+                                                Table "public.person"
+            Column      |          Type          | Collation | Nullable |              Default
+        ------------------+------------------------+-----------+----------+------------------------------------
+        id               | bigint                 |           | not null | nextval('person_id_seq'::regclass)
+        first_name       | character varying(50)  |           | not null |
+        last_name        | character varying(50)  |           | not null |
+        email            | character varying(150) |           |          |
+        gender           | character varying(10)  |           | not null |
+        date_of_birth    | date                   |           | not null |
+        country_of_birth | character varying(50)  |           |          |
+        Indexes:
+            "person_pkey" PRIMARY KEY, btree (id)
+
+        -> (here we can see that in id we have use BIGSERIAL as data type and which is primary key as well which is being shown at the bottom is 'Indexes')
+        -> (in that id column because of BIGSERIAL the default value is the next value which is being managed by postgres)
+
+*) Drop primary key constraint
+    -> we can achieve it by altering the table and dropping the actual constraint
+    -> EX:
+        -> ALTER TABLE person DROP CONSTRAINT person_pkey;
+            -> (dropping constraint of person table)
+
