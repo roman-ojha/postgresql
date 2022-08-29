@@ -9,6 +9,8 @@
          
          -> (here passport_number is a primary key)
 
+*) Understanding Primary Key
+
         -> \d person;
                                                 Table "public.person"
             Column      |          Type          | Collation | Nullable |              Default
@@ -32,3 +34,8 @@
         -> ALTER TABLE person DROP CONSTRAINT person_pkey;
             -> (dropping constraint of person table)
 
+*) Add primary key as constraint
+    -> we can add new column as primary key but all the value from that column need to be unique
+    -> EX:
+        -> ALTER TABLE person ADD PRIMARY KEY (id);
+            -> (PRIMARY KEY (<list_of_column>))
