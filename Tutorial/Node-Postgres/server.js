@@ -17,6 +17,26 @@ client.query(
   }
 );
 
+// Insert into database
+const text =
+  "INSERT INTO person(first_name,last_name,email,gender,date_of_birth,country_of_birth) VALUES($1, $2, $3, $4, $5, $6)";
+const values = [
+  "roman",
+  "ojha",
+  "razz@roman.com",
+  "male",
+  "2022-01-23T18:15:00.000Z",
+  "Nepal",
+];
+
+client.query(text, values, (err, res) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(res);
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Running on ${PORT}`);
 });
