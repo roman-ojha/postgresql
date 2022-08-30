@@ -1,0 +1,5 @@
+*) Check Constraint:
+    -> Check constraint allow us to add a constraint based on a boolean condition
+    -> Let's say that in Person table that we create before we want to make a constraint that will only allow to add 'Male' & 'Female' as gender for that we have to use Check constraint
+    -> EX:
+        -> ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = 'Female' OR gender = 'Male');
