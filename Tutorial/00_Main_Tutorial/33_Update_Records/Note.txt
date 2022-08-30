@@ -1,6 +1,6 @@
 *) Update Records:
     -> Update will allow us to update column or multiple column based on Where clause
-    -> UPDATE <table_name> SET
+    -> UPDATE <table_name> SET column1 = '<value>' WHERE <condition>
     -> SET allow to pass as array of columns including the new values
     -> Ex:
         -> UPDATE person SET email = 'roman@gmail.com';

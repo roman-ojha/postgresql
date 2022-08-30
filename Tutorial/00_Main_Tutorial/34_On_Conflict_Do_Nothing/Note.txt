@@ -1,13 +1,14 @@
--> Here we will going to see how to deal with duplicate key error or exceptions
--> EX:
-    -> Let's try to Insert new row in person table where we will try to add id which already exist in the table
-        ->  INSERT INTO person (id, first_name, last_name, email ,gender, date_of_birth, country_of_birth)
-            VALUES (405, 'Ebeneser', 'Houlison', 'abc@gmail.com', 'Male', '2022-03-01', 'China');
-                -> (now if we will try to run this it will try an error)
+*) ON CONFLICT & DO NOTHING
+    -> Here we will going to see how to deal with duplicate key error or exceptions
+    -> EX:
+        -> Let's try to Insert new row in person table where we will try to add id which already exist in the table
+            ->  INSERT INTO person (id, first_name, last_name, email ,gender, date_of_birth, country_of_birth)
+                VALUES (405, 'Ebeneser', 'Houlison', 'abc@gmail.com', 'Male', '2022-03-01', 'China');
+                    -> (now if we will try to run this it will try an error)
 
-    -> But sometimes we don't want to see an error or exception, so you want to handle the case where you have conflict there comes 'ON CONFLICT' keyword
-        ->  INSERT INTO person (id, first_name, last_name, email ,gender, date_of_birth, country_of_birth)
-            VALUES (405, 'Ebeneser', 'Houlison', 'abc@gmail.com', 'Male', '2022-03-01', 'China')
-            ON CONFLICT (id) DO NOTHING;
-                -> (here we are trying to see is given id is making conflict if it is making conflict then we are saying to do nothing rather then throwing error)
-    -> NOTE that when ever you want to use 'ON CONFLICT' make sure that your column is unique constraint or primary key constraint
+        -> But sometimes we don't want to see an error or exception, so you want to handle the case where you have conflict there comes 'ON CONFLICT' keyword
+            ->  INSERT INTO person (id, first_name, last_name, email ,gender, date_of_birth, country_of_birth)
+                VALUES (405, 'Ebeneser', 'Houlison', 'abc@gmail.com', 'Male', '2022-03-01', 'China')
+                ON CONFLICT (id) DO NOTHING;
+                    -> (here we are trying to see is given id is making conflict if it is making conflict then we are saying to do nothing rather then throwing error)
+        -> NOTE that when ever you want to use 'ON CONFLICT' make sure that your column is unique constraint or primary key constraint
