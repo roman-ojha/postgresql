@@ -7,10 +7,10 @@
             -> (this will update every single row in person table)
         -> UPDATE person SET email = 'roman@gmail.com' WHERE country_of_birth = 'Nepal';
             -> (updating some of the rows with given condition)
-        -> UPDATE person 
-           SET first_name = 'Roman',
-           last_name = 'Ojha',
-           gender = 'Male' 
-           WHERE country_of_birth = 'Nepal' 
-           AND email = 'roman@gmail.com';
-            -> (update multiple column)
+        ->  UPDATE person 
+            SET first_name = 'Roman',
+            last_name = 'Ojha',
+            gender = 'Male' 
+            WHERE country_of_birth = 'Nepal' 
+            AND email = 'roman@gmail.com';
+             -> (update multiple column)
