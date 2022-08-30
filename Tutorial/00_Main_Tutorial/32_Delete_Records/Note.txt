@@ -1,0 +1,7 @@
+*) Delete Records
+    -> EX:
+        -> DELETE FROM person;
+            -> (delete every records from person table)
+        -> DELETE FROM person WHERE id = 901;
+            -> (delete some record with given condition)
+        -> DELETE FROM person WHERE gender = 'Female' AND country_of_birth = 'England';
