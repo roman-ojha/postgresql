@@ -1,0 +1,9 @@
+*) ON CONFLICT & DO UPDATE:
+    -> Sometimes you want to do something else other then do nothing
+    -> let's say that some user register on you site and request it by sending all the information but after 2 second it again request with different email then user is trying to update the email in that case the Conflict will get arise and in that case will can use 'DO UPDATE' keyword
+    -> EX:
+        ->  INSERT INTO person (id, first_name, last_name, email ,gender, date_of_birth, country_of_birth)
+            VALUES (405, 'Ebeneser', 'Houlison', 'abc@gmail.in', 'Male', '2022-03-01', 'China')
+            ON CONFLICT (id) DO UPDATE SET email = EXCLUDED.email;
+                -> (here in SET email, 'email' refer to the previously send email and the EXCLUDED.email 'email' refer to the new email that is being send)
+                -> (so here yes conflict is happening but because the request is being done by the same user and try to change the email we will just going to change the email of that table)
