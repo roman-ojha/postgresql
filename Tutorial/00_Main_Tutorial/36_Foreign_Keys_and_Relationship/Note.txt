@@ -1,4 +1,4 @@
-*) 
+*) Foreign Keys & Relationship
     -> so far in this tutorial we have table 'person' & 'car'
     -> now what we want to do is to do query that return a combination of both person and car detail for a single person
     -> for that SQL provide us the relationship between multiple table it means that you could have multiple table and then connect them together based on a foreign key
@@ -10,7 +10,7 @@
             -> to achieve this we have relationship 
             -> so to achieve this we have to use foreign key into to reference to the another table
 
-    *) Relationship.png
+    *) Relationship.png EX:
         -> So in Relationship.png we can see that on person table we have added new column:
             -> car_id BIGINT REFERENCE car(id) UNIQUE (car_id)
                 -> REFERENCE is use want to reference to the another table column

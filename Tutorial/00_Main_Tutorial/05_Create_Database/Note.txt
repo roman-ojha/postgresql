@@ -4,6 +4,10 @@
         -> q (for exist)
     -> \l 
         -> (list all of the database in computer)
+    -> \d 
+        -> (list of table)
+    -> \dt
+        -> (list of relations)
 
 *) Create Database:
     -> psql -U postgres -h localhost -W 
