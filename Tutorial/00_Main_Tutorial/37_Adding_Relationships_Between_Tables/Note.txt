@@ -2,3 +2,4 @@
     -> now let's go and add relationship between two table 'Person' & 'Car'
     -> now we will again create new table for 'Person' & 'Car'
     -> we will create 'person-car.sql' file and add command that will add relation between tables
+    -> all the explanation is being explained inside 'person-car.sql'
