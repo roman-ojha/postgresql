@@ -1,0 +1,26 @@
+*)
+    -> Now let's assign cars to people
+    -> Before assign cars to people:
+         id | first_name | last_name |          email          | gender | date_of_birth | country_of_birth | car_id
+        ----+------------+-----------+-------------------------+--------+---------------+------------------+--------
+        1   | Coraline   | Bellward  | cbellward0@newsvine.com | Female | 2022-01-08    | Sweden           |
+        2   | Hayley     | Volker    |                         | Female | 2022-07-05    | Maldives         |
+        3   | Mona       | Targett   |                         | Female | 2021-09-14    | Philippines      |
+    -> Cars:
+         id |   make   |    model     | price
+        ----+----------+--------------+-------
+        1   | Cadillac | Escalade ESV | 76446
+        2   | Nissan   | Frontier     | 21524
+
+    -> Assign car id to people
+        -> UPDATE person SET car_id = 2 WHERE id = 1;
+        -> UPDATE person SET car_id = 1 WHERE id = 2;
+        -> SELECT * from person;
+            -> Output
+             id | first_name | last_name |          email          | gender | date_of_birth | country_of_birth | car_id
+            ----+------------+-----------+-------------------------+--------+---------------+------------------+--------
+            3   | Mona       | Targett   |                         | Female | 2021-09-14    | Philippines      |
+            1   | Coraline   | Bellward  | cbellward0@newsvine.com | Female | 2022-01-08    | Sweden           |      2
+            2   | Hayley     | Volker    |                         | Female | 2022-07-05    | Maldives         |      1
+
+    -> NOTE: if we try to set car_id that doesn't exist in car then we can't do that
