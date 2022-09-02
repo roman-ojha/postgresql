@@ -54,4 +54,11 @@ CASE WHEN salary > 20000 THEN salary * 1.05
 ELSE salary * 1.2
 END;
 
--- Q11) Delete the record from employee table whose eid is 111.
+-- Q11) Delete the record from employee table whose eid is 111.  
+DELETE FROM employee
+WHERE eid = 111;
+
+-- Q12) Use sub query to find all teacher name and faculty whose date of employee is jan 1, 2070
+SELECT name, faculty FROM teacher WHERE tid IN (SELECT teacher.tid FROM teacher, employee as e WHERE e.eid = teacher.tid AND dateofemploy = '01/01/2070');
+
+-- Q13) Use sub query to find all the book name and auther name whose publication is 'hcoe'
