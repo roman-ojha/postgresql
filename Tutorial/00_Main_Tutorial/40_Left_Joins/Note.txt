@@ -1,0 +1,80 @@
+*) LEFT JOINS
+    -> Left join Include all to rows from the left table 'A' as well as the records from the Table 'B' that have a corresponding relationship also the one that don't have a corresponding relationship 
+    -> i.e it return all the record even if there isn't a match
+    -> Rows from Left Table 'A' which have relationship with 'B'+ Rows from Left Table 'A' which doesn't have relationship with 'B'
+
+    -> Lets us say that In our example on 'People' & 'Car' table we want to get people that have car as well as we want to get people that don't have a car
+        -> People Table:
+            id | first_name | last_name |          email          | gender | date_of_birth | country_of_birth | car_id
+        ----+------------+-----------+-------------------------+--------+---------------+------------------+--------
+        3   | Mona       | Targett   |                         | Female | 2021-09-14    | Philippines      |
+        1   | Coraline   | Bellward  | cbellward0@newsvine.com | Female | 2022-01-08    | Sweden           |      2
+        2   | Hayley     | Volker    |                         | Female | 2022-07-05    | Maldives         |      1
+
+        -> Car Table:
+            id |   make   |    model     | price
+        ----+----------+--------------+-------
+        1   | Cadillac | Escalade ESV | 76446
+        2   | Nissan   | Frontier     | 21524
+    
+    -> EX:
+        ->  SELECT * FROM person
+            LEFT JOIN car ON person.car_id = car.id;
+                -> Output:
+                -[ RECORD 1 ]----+------------------------
+                id               | 2
+                first_name       | Hayley
+                last_name        | Volker
+                email            |
+                gender           | Female
+                date_of_birth    | 2022-07-05
+                country_of_birth | Maldives
+                car_id           | 1
+                id               | 1
+                make             | Cadillac
+                model            | Escalade ESV
+                price            | 76446
+                -[ RECORD 2 ]----+------------------------
+                id               | 1
+                first_name       | Coraline
+                last_name        | Bellward
+                email            | cbellward0@newsvine.com
+                gender           | Female
+                date_of_birth    | 2022-01-08
+                country_of_birth | Sweden
+                car_id           | 2
+                id               | 2
+                make             | Nissan
+                model            | Frontier
+                price            | 21524
+                -[ RECORD 3 ]----+------------------------
+                id               | 3
+                first_name       | Mona
+                last_name        | Targett
+                email            |
+                gender           | Female
+                date_of_birth    | 2021-09-14
+                country_of_birth | Philippines
+                car_id           |
+                id               |
+                make             |
+                model            |
+                price            |
+        ->  SELECT * FROM person
+            LEFT JOIN car ON person.car_id = car.id
+            WHERE car.* IS NULL;
+                -> (.* IS NULL means every single column on car should be null)
+                -> Output:
+                -[ RECORD 1 ]----+------------
+                id               | 3
+                first_name       | Mona
+                last_name        | Targett
+                email            |
+                gender           | Female
+                date_of_birth    | 2021-09-14
+                country_of_birth | Philippines
+                car_id           |
+                id               |
+                make             |
+                model            |
+                price            |
