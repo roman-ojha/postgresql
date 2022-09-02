@@ -1,0 +1,57 @@
+*) Inner Joins
+    -> Joins is effective way of combining two table.
+    -> Inner Join takes what ever is common in both tables 
+    -> iF we have a foreign key & primary that present in both table then we will get the new Record 'C' from two table
+    -> So, if you have a Table 'A' & Table 'B' then 'A' + 'B' = 'C'
+    -> We will try to perform Inner Join Between 'People' Table & 'Car' table
+        -> People Table:
+         id | first_name | last_name |          email          | gender | date_of_birth | country_of_birth | car_id
+        ----+------------+-----------+-------------------------+--------+---------------+------------------+--------
+        3   | Mona       | Targett   |                         | Female | 2021-09-14    | Philippines      |
+        1   | Coraline   | Bellward  | cbellward0@newsvine.com | Female | 2022-01-08    | Sweden           |      2
+        2   | Hayley     | Volker    |                         | Female | 2022-07-05    | Maldives         |      1
+
+        -> Car Table:
+         id |   make   |    model     | price
+        ----+----------+--------------+-------
+        1   | Cadillac | Escalade ESV | 76446
+        2   | Nissan   | Frontier     | 21524
+    -> EX:
+        ->  SELECT * FROM person
+            JOIN car ON person.car_id = car.id;
+                ->(ON: Takes a column which can be use to join two table in our case it is foreign key)
+                -> Output:
+                -[ RECORD 1 ]----+------------------------
+                id               | 2
+                first_name       | Hayley
+                last_name        | Volker
+                email            |
+                gender           | Female
+                date_of_birth    | 2022-07-05
+                country_of_birth | Maldives
+                car_id           | 1
+                id               | 1
+                make             | Cadillac
+                model            | Escalade ESV
+                price            | 76446
+                -[ RECORD 2 ]----+------------------------
+                id               | 1
+                first_name       | Coraline
+                last_name        | Bellward
+                email            | cbellward0@newsvine.com
+                gender           | Female
+                date_of_birth    | 2022-01-08
+                country_of_birth | Sweden
+                car_id           | 2
+                id               | 2
+                make             | Nissan
+                model            | Frontier
+                price            | 21524
+        ->  SELECT person.first_name, car.make, car.model, car.price
+            FROM person
+            JOIN car ON person.car_id = car.id;
+            -> Output
+                 first_name |   make   |    model     | price
+                ------------+----------+--------------+-------
+                Hayley      | Cadillac | Escalade ESV | 76446
+                Coraline    | Nissan   | Frontier     | 21524

@@ -8,6 +8,8 @@
         -> (list of table)
     -> \dt
         -> (list of relations)
+    -> \x
+        -> (expanded display on/off)
 
 *) Create Database:
     -> psql -U postgres -h localhost -W 
