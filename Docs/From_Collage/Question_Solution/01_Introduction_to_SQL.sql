@@ -1,10 +1,10 @@
 -- Create a database named 'HCOE' and create tables as following schema
--- Student(ID, Name, RN, Batch)
+-- Student(SID, Name, RN, Batch)
 -- Teacher(TID, Name, Faculty)
 
 CREATE DATABASE HCOE;
 CREATE TABLE student(
-    ID INT,
+    SID INT,
     Name VARCHAR(50),
     RN INT,
     Batch CHAR(4)
@@ -16,15 +16,15 @@ CREATE TABLE teacher(
 );
 
 -- Q1) Insert any five records in each table
-INSERT INTO student(ID, Name, RN, Batch)
+INSERT INTO student(SID, Name, RN, Batch)
 VALUES (1,'Roman',25,'2076');
-INSERT INTO student(ID, Name, RN, Batch)
+INSERT INTO student(SID, Name, RN, Batch)
 VALUES (2,'Razz',26,'2077');
-INSERT INTO student(ID, Name, RN, Batch)
+INSERT INTO student(SID, Name, RN, Batch)
 VALUES (3,'Ram',27,'2078');
-INSERT INTO student(ID, Name, RN, Batch)
+INSERT INTO student(SID, Name, RN, Batch)
 VALUES (4,'Harry',28,'2079');
-INSERT INTO student(ID, Name, RN, Batch)
+INSERT INTO student(SID, Name, RN, Batch)
 VALUES (5,'Tom',29,'2078');
 
 INSERT INTO teacher(TID, Name, Faculty)
@@ -42,8 +42,8 @@ VALUES (5, 'Jary', 'BCA');
 SELECT * FROM student;
 SELECT * FROM teacher;
 
--- Q3) Display only ID and Name form student
-SELECT ID, Name FROM student;
+-- Q3) Display only SID and Name form student
+SELECT SID, Name FROM student;
 
 -- Q4) Display Name and Faculty from Teacher table
 SELECT NAME, Faculty FROM teacher;
@@ -56,8 +56,8 @@ DROP COLUMN RN;
 ALTER TABLE teacher
 ADD salary MONEY;
 
--- Q7) Copy ID and name attribute to new relation 'info_student'
-SELECT ID, Name
+-- Q7) Copy SID and name attribute to new relation 'info_student'
+SELECT SID, Name
 INTO info_student
 FROM student;
 
