@@ -1,0 +1,2 @@
+-> Firstly we will Select data and export that into a CSV file
+-> \copy (SELECT * FROM person LEFT JOIN car ON car.id = person.car_id) TO 'D:/Programming/Database/PostgreSQL/Tutorial/00_Main_Tutorial/42_Exporting_Query_Results_To_CSV/results.csv' DELIMITER ',' CSV HEADER;
