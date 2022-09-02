@@ -112,3 +112,12 @@ SELECT * FROM employee WHERE ename LIKE '%d';
 
 -- Q12) Display all records from employee table whose name exactly consist of 5 characters.
 SELECT * FROM employee WHERE ename LIKE '_____';
+
+-- Q13) Display all records from employee table where name start with 'B' and salary greater than 22000
+SELECT * FROM employee WHERE ename LIKE 'B%' AND salary < 22000;
+
+-- Q14) Display all records from book table where either bookid lies in range 1001 to 1000 or price range in 1000 to 2500
+SELECT * FROM book WHERE bid > 1000 AND bid <= 2001 OR price >= 1000 AND price <= 2500;
+
+-- Q15) Display isbn number and bookname where booklist must not contain isbn no. 1003
+SELECT * FROM booklist WHERE isbn != 1003;
