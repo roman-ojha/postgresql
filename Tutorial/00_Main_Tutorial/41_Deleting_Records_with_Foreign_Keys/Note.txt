@@ -1,0 +1,22 @@
+*) 
+    -> Here we will learn How to delete which you have a foreign key constraint
+    -> Person Table:
+        id | first_name | last_name |          email           | gender | date_of_birth | country_of_birth | car_id
+        ----+------------+-----------+--------------------------+--------+---------------+------------------+--------
+        3  | Mona       | Targett   |                          | Female | 2021-09-14    | Philippines      |
+        1  | Coraline   | Bellward  | cbellward0@newsvine.com  | Female | 2022-01-08    | Sweden           |      2
+        2  | Hayley     | Volker    |                          | Female | 2022-07-05    | Maldives         |      1
+        4  | Letisha    | Hoyes     | lhoyesp@domainmarket.com | Female | 2021-12-19    | China            |     14
+    -> Car Table:
+         id |   make   |    model     | price
+        ----+----------+--------------+-------
+        1   | Cadillac | Escalade ESV | 76446
+        2   | Nissan   | Frontier     | 21524
+        14  | Ford     | Escape       | 28833
+
+    -> If we will try to delete Car with id = 14 then that will not going to work
+        -> DELETE FROM car WHERE id = 14;
+    -> If we want to delete this record then we first have to remove foreign key constraint from the Person before Deleting
+    -> Right now we will delete the whole row of person which contain car_id = 14
+        -> DELETE FROM person WHERE id = 4;
+        -> DELETE FROM car WHERE id = 14;
