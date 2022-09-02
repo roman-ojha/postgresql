@@ -1,0 +1,2 @@
+-> https://node-postgres.com/features/connecting
+-> https://github.com/bezkoder/node-js-postgresql-crud-example
