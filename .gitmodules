@@ -1,0 +1,3 @@
+[submodule "Sequelize"]
+	path = Sequelize
+	url = https://github.com/roman-ojha/sequelize.git
