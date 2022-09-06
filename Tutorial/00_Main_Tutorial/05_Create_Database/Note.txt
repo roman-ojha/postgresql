@@ -6,10 +6,14 @@
         -> (list all of the database in computer)
     -> \d 
         -> (list of table)
+    -> \d <table_name>
+        -> (more detail about the given table)
     -> \dt
         -> (list of relations)
     -> \x
         -> (expanded display on/off)
+    -> \c <database_name>
+        -> (switch to the different database)
 
 *) Create Database:
     -> psql -U postgres -h localhost -W 
