@@ -1,2 +1,5 @@
 *) On windows
     -> https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+    
+*) Install into into XAMPP
+    -> https://youtu.be/DFvBnsY15Bo
