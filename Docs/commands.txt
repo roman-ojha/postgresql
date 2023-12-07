@@ -1,3 +1,6 @@
 *) Rename Column name
     ->  ALTER TABLE <table_name>
         RENAME COLUMN <old_name> TO <new_name>
+        
+-> psql -U your_username -d your_database -W
+-> psql -U your_username -d your_database -w -h your_host -p your_port -W -c "SQL_COMMAND"
