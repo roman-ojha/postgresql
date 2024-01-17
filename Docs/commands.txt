@@ -4,3 +4,7 @@
         
 -> psql -U your_username -d your_database -W
 -> psql -U your_username -d your_database -w -h your_host -p your_port -W -c "SQL_COMMAND"
+
+-> psql -U $POSTGRES_USER -d $POSTGRES_DB -w -h $POSTGRES_HOST -p $POSTGRES_PORT -W -c "SQL_COMMAND"
+    -> (run psql command line with environment variables value)
+
