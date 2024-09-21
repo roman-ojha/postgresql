@@ -1,0 +1,13 @@
+model Category {
+    id                  Int       @id @default(autoincrement())
+    name                String    @unique @db.VarChar(100)
+    picture_url         String
+    picture_bucket_name String
+    blob_name           String    @unique
+    created_at          DateTime  @default(now())
+    updated_at          DateTime  @updatedAt
+    products            Product[]
+
+    @@index([name])
+    @@map("categories")
+}

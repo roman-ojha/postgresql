@@ -1,0 +1,47 @@
+enum OrderStatus {
+    PENDING
+    PROCESSING
+    CANCELLED
+    COMPLETED
+}
+
+enum DeliveryDay {
+    SUNDAY
+    SATURDAY
+}
+
+model Order {
+    id                           BigInt            @id @default(autoincrement())
+    user_id                      BigInt
+    user                         User              @relation(fields: [user_id], references: [id])
+    shipping_address_id          BigInt
+    shipping_address             ShippingAddress   @relation(fields: [shipping_address_id], references: [id])
+    total_purchased_price        Float
+    total_discount_price         Float
+    is_payment_completed         Boolean           @default(false)
+    validate_upto_before_payment DateTime // if user only have done order and have not done payment then we have to expire the order after some point.
+    status                       OrderStatus       @default(PENDING)
+    delivery_day                 DeliveryDay?
+    payment_method               String            @db.VarChar(20)
+    shipping_method              String
+    created_at                   DateTime          @default(now())
+    updated_at                   DateTime          @updatedAt
+    ordered_products             OrderedProducts[]
+
+    @@index([user_id, status])
+    @@map("orders")
+}
+
+model OrderedProducts {
+    id              Int     @id @default(autoincrement())
+    order_id        BigInt
+    order           Order   @relation(fields: [order_id], references: [id])
+    product_id      Int
+    product         Product @relation(fields: [product_id], references: [id])
+    purchased_price Float
+    discount_price  Float
+    quantity        Int // Quantity of the specific product in this order
+
+    @@unique([order_id, product_id]) // Ensures that a specific product can only appear once per order
+    @@map("ordered_products")
+}

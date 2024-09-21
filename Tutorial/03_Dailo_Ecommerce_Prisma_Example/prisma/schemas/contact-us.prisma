@@ -1,0 +1,11 @@
+model ContactUs {
+    id           BigInt   @id @default(autoincrement())
+    name         String   @db.VarChar(150)
+    email        String   @db.VarChar(320)
+    phone_number String   @db.VarChar(20)
+    message      String
+    created_at   DateTime @default(now())
+    updated_at   DateTime @updatedAt
+
+    @@map("contact_us")
+}

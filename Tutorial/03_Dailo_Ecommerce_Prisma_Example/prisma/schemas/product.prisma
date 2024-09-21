@@ -1,0 +1,34 @@
+model ProductPicture {
+    id          BigInt  @id @default(autoincrement())
+    url         String
+    bucket_name String
+    blob_name   String  @unique
+    product     Product @relation(fields: [product_id], references: [id], onDelete: Cascade)
+    product_id  Int
+
+    @@map("product_pictures")
+}
+
+model Product {
+    id                 Int               @id @default(autoincrement())
+    name               String
+    slug               String            @unique
+    price              Float
+    pictures           ProductPicture[]
+    description        String
+    is_in_stock        Boolean           @default(true)
+    discount_price     Float             @default(0)
+    discount_upto      DateTime // TODO: we might can remove this field because admin have to update this date every time date will expired.
+    available_quantity Int
+    // average_rating     Float             @default(0) // removed average_rating handle it in future, for now we will calculate averate rating using SQL query.
+    category           Category          @relation(fields: [category_id], references: [id])
+    category_id        Int
+    created_at         DateTime          @default(now())
+    updated_at         DateTime          @updatedAt
+    carts              Cart[]
+    rates              Rate[]
+    ordered_products   OrderedProducts[]
+
+    @@index([slug])
+    @@map("products")
+}

@@ -1,0 +1,19 @@
+model ShippingAddress {
+    id                           BigInt   @id @default(autoincrement())
+    first_name                   String   @db.VarChar(50)
+    last_name                    String   @db.VarChar(50)
+    user_id                      BigInt
+    user                         User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+    country                      String   @default("Denmark") @db.VarChar(80)
+    house_number_and_street_name String
+    apartment_or_suite_or_unit   String
+    town_or_city_name            String
+    phone_no                     String   @db.VarChar(50)
+    // TODO: do we need postcode/ZIP
+    created_at                   DateTime @default(now())
+    updated_at                   DateTime @updatedAt
+    Order                        Order[]
+
+    @@index([user_id])
+    @@map("shipping_addresses")
+}

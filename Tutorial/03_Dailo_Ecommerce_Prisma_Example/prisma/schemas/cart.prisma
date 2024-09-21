@@ -1,0 +1,12 @@
+model Cart {
+    id         BigInt   @id @default(autoincrement())
+    product    Product  @relation(fields: [product_id], references: [id])
+    product_id Int
+    user       User     @relation(fields: [user_id], references: [id])
+    user_id    BigInt
+    quantity   Int
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+
+    @@map("carts")
+}

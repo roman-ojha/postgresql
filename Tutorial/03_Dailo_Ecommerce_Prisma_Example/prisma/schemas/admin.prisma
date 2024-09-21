@@ -1,0 +1,12 @@
+model Admin {
+    id          Int      @id @default(autoincrement())
+    email       String   @unique @db.VarChar(50)
+    password    String
+    salt        String
+    is_verified Boolean  @default(false)
+    created_at  DateTime @default(now())
+    updated_at  DateTime @updatedAt
+
+    @@index([email])
+    @@map("admins")
+}

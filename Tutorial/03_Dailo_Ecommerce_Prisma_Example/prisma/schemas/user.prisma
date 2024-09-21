@@ -1,0 +1,21 @@
+enum SingInWith {
+    GOOGLE
+}
+
+model User {
+    id               BigInt            @id @default(autoincrement())
+    email            String            @unique
+    picture          String?
+    sign_in_with     SingInWith
+    name             String?
+    is_verified      Boolean           @default(false)
+    created_at       DateTime          @default(now())
+    updated_at       DateTime          @updatedAt
+    carts            Cart[]
+    rates            Rate[]
+    shipping_address ShippingAddress[]
+    Order            Order[]
+
+    @@index([email])
+    @@map("users")
+}
